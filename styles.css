@@ -1,0 +1,114 @@
+body {
+    background-color: #f8e1f4;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #333;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+.container {
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure the container is above the hearts */
+}
+
+.hearts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.heart {
+    width: 50px;
+    height: 50px;
+    animation: bounce 1s infinite;
+    margin: 0 10px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.glow {
+    font-size: 2.5em;
+    color: #ff69b4;
+    text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff1493;
+    animation: glow-animation 1.5s infinite alternate;
+}
+
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff1493;
+    }
+    100% {
+        text-shadow: 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff1493;
+    }
+}
+
+.cake-container {
+    position: relative;
+    display: inline-block;
+    animation: scale-animation 1.5s infinite alternate;
+}
+
+@keyframes scale-animation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.cake {
+    width: 300px;
+    height: auto;
+}
+
+.candles {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.candle {
+    width: 10px;
+    height: 30px;
+    background-color: #ffcc00;
+    position: relative;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.candle:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ff6600;
+    border-radius: 50%;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1
+}
